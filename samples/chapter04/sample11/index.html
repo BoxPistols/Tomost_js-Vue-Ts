@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <div id="app">
+                <p>{{ number }}</p>
+            </div>
+            <!-- ここに、JavaScriptを記述します -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                var Util = {
+                    methods: {
+                        addZero: function (value) {
+                            if (value < 10) {
+                                return '0' + value
+                            } else {
+                                return value
+                            }
+                        }
+                    }
+                }
+                var app = new Vue({
+                    el: "#app",
+                    data: {
+                        number: 5
+                    },
+                    mounted: function () {
+                        this.number = this.addZero(this.number)
+                    },
+                    mixins: [Util]
+                })
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

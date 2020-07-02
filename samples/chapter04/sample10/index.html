@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <div id="app">
+                <clock></clock>
+                <clock style="color: blue">現在時刻</clock>
+            </div>
+            <!-- ここに、JavaScriptを記述します -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                Vue.component('clock', {
+                    data: function () {
+                        return {
+                            time: ''
+                        }
+                    },
+                    mounted: function () {
+                        var timerID = setInterval(this.refresh, 500);
+                    },
+                    methods: {
+                        refresh: function () {
+                            var now = new Date();
+                            this.time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+                        }
+                    },
+                    template: '<div :style=""><h2><slot>時計</slot></h2>{{ time }}</div>'
+                })
+
+                var app = new Vue({
+                    el: "#app"
+                })
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

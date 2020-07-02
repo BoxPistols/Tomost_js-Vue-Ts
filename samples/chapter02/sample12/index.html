@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <!-- ここに、JavaScriptを記述します -->
+            <script>
+                const today = new Date();
+                const week = ['日', '月', '火', '水', '木', '金', '土'];
+
+                let week_jp = week[today.getDay()];
+                document.write(`今日は、${week_jp}曜日です`);
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

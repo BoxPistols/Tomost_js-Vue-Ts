@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">1から365までの数字を表示しよう</h1>
+
+        <div class="frame__inner">
+            <div id="app">
+                <ul v-for="i of 1000" :key="i">
+                    <li>{{ i }}</li>
+                </ul>
+            </div>
+            <!-- ここに、JavaScriptを記述します -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                var app = new Vue({
+                    el: "#app"
+                })
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

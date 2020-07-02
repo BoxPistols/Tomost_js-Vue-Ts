@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <div id="app">
+                <date></date>
+                <date></date>
+            </div>
+            <!-- ここに、JavaScriptを記述します -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                Vue.component('date', {
+                    data: function() {
+                        return {
+                            today: ''
+                        }
+                    },
+                    mounted: function() {
+                        const now = new Date();
+                        this.today = `${now.getFullYear()}/${now.getMonth()+1}/${now.getDate()}`;
+                    },
+                    template: '<div>{{ today }}</div>'
+                })
+
+                var app = new Vue({
+                    el: "#app",
+                })
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

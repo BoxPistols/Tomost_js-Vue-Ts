@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <!-- ここに、JavaScriptを記述します -->
+            <script>
+                // class Calc {
+                //     static sum(num1, num2) {
+                //         return num1 + num2;
+                //     }
+                // }
+
+                // document.write(Calc.sum(10, 5));
+
+                class Item {
+                    constructor(tax) {
+                        if (isFinite(tax)) {
+                            this._tax = tax;
+                        } else {
+                            this._tax = 0;
+                        }
+                    }
+
+                    set tax(tax) {
+                        if (isFinite(tax)) {
+                            this._tax = tax;
+                        } else {
+                            this._tax = 0;
+                        }
+                    }
+                    
+                    get tax() {
+                        return this._tax + '%';
+                    }
+                }
+
+                let item = new Item(10);
+                item.tax = 8;
+                document.write(item.tax);
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

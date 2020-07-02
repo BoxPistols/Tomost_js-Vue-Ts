@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <!-- ここに、JavaScriptを記述します -->
+            <script>
+                const locations = [
+                    {
+                        "name": "国会議事堂",
+                        "address": "東京都千代田区x-x-x"
+                    },
+                    {
+                        "name": "札幌時計台",
+                        "address": "札幌市中央区北x-x-x"
+                    },
+                    {
+                        "name": "首里城",
+                        "address": "沖縄県那覇市x-x-x"    
+                    }
+                ];
+
+                for (let i=0; i<locations.length; i++) {
+                    document.write(locations[i].name + '/'
+                        + locations[i].address + '<br>');
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

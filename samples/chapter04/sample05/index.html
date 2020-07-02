@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">営業時間外の場合に警告を表示しよう</h1>
+
+        <div class="frame__inner">
+            <div id="app">
+                <p v-if="out_service">現在は営業時間外です</p>
+            </div>
+            <!-- ここに、JavaScriptを記述します -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                var today = new Date();
+                var hour = today.getHours();
+                //hour = 21;
+                var app = new Vue({
+                    el: "#app",
+                    data: {
+                        out_service: (hour > 20),
+                    }
+                })
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

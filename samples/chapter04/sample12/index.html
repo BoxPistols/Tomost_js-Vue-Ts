@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <div class="frame">
+        <h1 class="frame__title">JavaScript</h1>
+
+        <div class="frame__inner">
+            <div id="app">
+                <input type="number" name="num1" v-model.number="num1" @change="calc"> +
+                <input type="number" name="num2" v-model.number="num2" @change="calc"> =
+                <span>{{ answer }}</span>
+            </div>
+            <!-- ここに、JavaScriptを記述します -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                var app = new Vue({
+                    el: "#app",
+                    data: {
+                        num1: 0,
+                        num2: 0,
+                        answer: 0
+                    },
+                    methods: {
+                        calc: function() {
+                            this.answer = this.num1 + this.num2;
+                        }
+                    }
+                })
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
